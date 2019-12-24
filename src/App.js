@@ -17,8 +17,7 @@ export default function App() {
       setImageList(_.sampleSize(data, 30)) 
       return data
     } catch (error) {
-      // eslint-disable-next-line no-unused-expressions
-      console.error
+      throw error
     } finally{
     }
   }
