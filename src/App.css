@@ -9,9 +9,3 @@
   font-size: 20px;
   text-align: left;
 }
-
-
- .btn-reset:active, .btn-reset:checked {
-  background-color: #343a40;
-  border-color: #343a40; /*set the color you want here*/
-}
