@@ -1,6 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import Axios from 'axios';
 import _  from 'lodash'
+import { Input, Col } from 'antd';
+import { Button, InputGroup, FormControl, Container, Row } from 'react-bootstrap';
+
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 import './App.css';
 
 export default function App() {
@@ -36,14 +41,26 @@ export default function App() {
 
   return (
     <div className="App">
-      <div className="container">
-        <button onClick={() => {getImages()}}>SEE DIFFERENT IMAGES</button>
-        <input 
-          type = 'search' 
-          placeholder = 'search character'
-          onChange = {(event) => setUserInput(event.target.value)} 
-        />
-        <button onClick={() => myFunction()}>GREYSCALE</button> 
+      <Container>
+        <Row style={{ marginTop: '2em',  }}>
+          <InputGroup className="mb-3 form-group w-50">
+            <FormControl
+          
+              aria-label="Default"
+              aria-describedby="inputGroup-sizing-small"
+              placeholder = 'Search for images by author name'
+              onChange = {(event) => setUserInput(event.target.value)} 
+            />
+          </InputGroup>
+        </Row>
+        <Row className="w-50" >
+          <Col style={{ float: 'none', margin: '0 auto' }}>
+            <Button variant="outline-dark" onClick={() => {getImages()}} style={{ margin: '0.3em' }}>Different Images</Button>
+            <Button  variant="dark" onClick={() => myFunction()} style={{ margin: '0.3em',  }}>Convert images into grayscale</Button>
+          </Col>
+        </Row>
+        </Container>
+        <Container>
          <div className="grid-container">
             {filtered.map((image, ind) => {
             return( 
@@ -54,7 +71,7 @@ export default function App() {
             )
             })}
           </div> 
-        </div>
+          </Container>
     </div>
   );
 }
