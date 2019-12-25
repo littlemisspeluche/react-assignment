@@ -39,7 +39,7 @@ export default function ImageList() {
             onChange = {(event) => setUserInput(event.target.value)} 
           />
         </InputGroup>
-        <Button variant="outline-dark" onClick={() => {getImages()}} style={{ margin: '0.3em' }}>Different Images</Button>
+        <Button variant="outline-dark" onClick={() => {getImages()}} className="button-header">Different Images</Button>
         <ColorButtons />
       </Container>
       <Container>

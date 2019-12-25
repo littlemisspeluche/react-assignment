@@ -7,7 +7,7 @@ export default function ColorButtons() {
   const buttonStyle = grayscale ? 'grayscale(100%)' : 'grayscale(0%)'
 
   function convertImageStyle(){
-    const imageByClass = document.getElementsByClassName("reandom-image")
+    const imageByClass = document.getElementsByClassName("random-image")
     for(var i = 0; i < imageByClass.length; i++) {
       imageByClass[i].style.filter = buttonStyle
     }
@@ -22,7 +22,7 @@ export default function ColorButtons() {
             name="radio"  
             value="1"  
             variant="dark"
-            style={{ margin: '0.3em' }}
+            className="button-header"
             onClick={() =>  
               {
               convertImageStyle()
@@ -36,7 +36,7 @@ export default function ColorButtons() {
             name="radio" 
             value="2"
             variant="outline-dark"
-            style={{ margin: '0.3em' }} 
+            className="button-header"
             onClick={() => 
             { 
               convertImageStyle()

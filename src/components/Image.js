@@ -1,4 +1,4 @@
-import React, {useContext} from 'react'
+import React from 'react'
 import '../App.css'
 
 export default function Image({ filtered }){
@@ -9,7 +9,7 @@ export default function Image({ filtered }){
       return ( 
         <div className="grid-item" key={ind}>
           <img 
-            className="reandom-image" 
+            className="random-image" 
             alt={image.author}
             key={image.id} 
             src={image.download_url}
