@@ -1,26 +1,25 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react'
 import Axios from 'axios'
 import _  from 'lodash'
-import { Container, Button, Row, InputGroup, FormControl } from 'react-bootstrap';
-import {  Image, ColorButtons } from '.';
+import { Container, Button, InputGroup, FormControl } from 'react-bootstrap'
+import {  Image, ColorButtons } from '.'
 
 
 export default function ImageList() {
     const [ imageList, setImageList ] = useState([])
-    const [userInput, setUserInput] = useState('')
-  
+    const [ userInput, setUserInput ] = useState('')
     const getImages = async () => {
       try {
-        const { data } = await Axios.get("https://picsum.photos/v2/list?limit=100")
+        const { data } = await Axios.get( "https://picsum.photos/v2/list?limit=100")
         setImageList(_.sampleSize(data, 30)) 
         return data
-      } catch (error) {
+      } catch ( error ) {
         throw error
       }
     }
 
-    const filtered = _.filter(imageList, function(item) {
-      const filteredByInput = item.author.toLowerCase().indexOf(userInput.toLowerCase()) > -1    
+    const filtered = _.filter(imageList, function( item ) {
+      const filteredByInput = item.author.toLowerCase().indexOf(userInput.toLowerCase()) > - 1    
       return filteredByInput
    })
   
