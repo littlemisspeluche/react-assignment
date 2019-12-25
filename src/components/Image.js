@@ -1,7 +1,8 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import '../App.css'
 
 export default function Image({ filtered }){
+
   return (
     <div className="grid-container">
     {filtered.map((image, ind) => {

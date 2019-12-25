@@ -8,6 +8,7 @@ import {  Image, ColorButtons } from '.'
 export default function ImageList() {
     const [ imageList, setImageList ] = useState([])
     const [ userInput, setUserInput ] = useState('')
+    
     const getImages = async () => {
       try {
         const { data } = await Axios.get( "https://picsum.photos/v2/list?limit=100")
@@ -18,7 +19,7 @@ export default function ImageList() {
       }
     }
 
-    const filtered = _.filter(imageList, function( item ) {
+    const filtered = _.filter(imageList, function(item) {
       const filteredByInput = item.author.toLowerCase().indexOf(userInput.toLowerCase()) > - 1    
       return filteredByInput
    })
